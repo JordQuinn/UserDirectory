@@ -12,7 +12,12 @@
     <a href="/user/{{username}}">
       <img src="{{avatar}}" />
       <span class = "name">{{name}}</span>
-      <span class = "position"> {{job}} {{company}}</span>
+      <span class = "position"> {{job}}</span>
+    {{#company}}
+      <span class = "company"> {{company}}</span>
+    {{/company}}
+      {{^company}}<span class = "null" style= color:red>Available for Hire</span>
+      {{/company}}
     </a>
     </li>
     {{/users}}

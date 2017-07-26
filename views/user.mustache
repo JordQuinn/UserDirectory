@@ -9,19 +9,31 @@
 
   <div id ="container">
     <a href="/user/{{username}}">
-      <img src="{{avatar}}" />
-      <span class = "username">{{name}}</span>
+      <img id= "userPic" src="{{avatar}}" />
+      <span class = "username">{{name}}</span><br>
+    {{#address.city}}
+      <span class = "city">{{address.city}},</span>
+    {{/address.city}}
+      {{^address.city}}<span class = "missing"></span>
+    {{/address.city}}
+      <span class = "country">{{address.country}} |</span>
+  {{#job}}
       <span class = "position"> {{job}} </span>
-      <span class = "company"> {{company}}</span>
-      <span class = "email"> {{email}}</span>
+  {{/job}}
+      {{^job}}<span class="missing" style = color:red>Available for Hire</span>
+  {{/job}}
+      <span class = "company"> {{company}}</span><br>
+      <span class = "email"> {{email}} | </span>
       <span class = "phone"> {{phone}}</span>
   </div>
-  <div id = "skillsEdu"
-      <span class = "school"> Education:  {{university}}</span>
-      <span class = "skills"> Skills: {{skills}} </span>
+  <div id = "skillsEdu">
+    {{#university}}
+      <br><span class = "school"> <b>Education: </b> {{university}}</span><br>
+    {{/university}}
+      {{^university}}<span class = "missing"></span><br>
+    {{/university}}
+      <span class = "skills"><b> Skills:</b> {{skills}} </span>
   </div>
   </a>
-
-
   </body>
 </html>
