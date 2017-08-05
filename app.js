@@ -3,6 +3,11 @@ const app = express()
 const path = require('path')
 const mustacheExpress = require('mustache-express');
 const data = require('./data')
+const mongoDB = require("mongodb");
+
+
+//require the mongodb and initial it
+//connect to the DB and save connection to a variable so we can use it
 
 app.engine('mustache', mustacheExpress());
 app.set('views', './views')

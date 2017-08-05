@@ -8,7 +8,7 @@
   <body id = useBody>
 
   <div id ="container">
-    <a href="/user/{{username}}">
+    <a id = "link" href ="/user/{{username}}">
       <img id= "userPic" src="{{avatar}}" />
       <span class = "username">{{name}}</span><br>
     {{#address.city}}
@@ -26,13 +26,24 @@
       <span class = "email"> {{email}} | </span>
       <span class = "phone"> {{phone}}</span>
   </div>
-  <div id = "skillsEdu">
-    {{#university}}
-      <br><span class = "school"> <b>Education: </b> {{university}}</span><br>
-    {{/university}}
-      {{^university}}<span class = "missing"></span><br>
-    {{/university}}
-      <span class = "skills"><b> Skills:</b> {{skills}} </span>
+      <table id = "skillsEdu">
+        {{#university}}
+        <tr>
+          <td class = "header"> <b>Education:</td>
+            <td>
+              {{university}}
+          </td>
+        </tr>
+        {{/university}}
+        <tr>
+          <td class = "header"><b>Skills:</td>
+        <td>
+              {{#skills}}
+              {{.}}<br>
+              {{/skills}}
+        </td>
+       </tr>
+      </table>
   </div>
   </a>
   </body>

@@ -6,6 +6,16 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
+  <h3> Refine your search:</h3>
+
+<form action = "/looking/add" method="post">
+  <button type="text" name="looking">Looking for work</button>
+</form>
+
+<form action = "/employed/add" method="post">
+  <button type="text" name = "employed">Employed</button>
+</form>
+
   <ul id = "users">
     {{#users}}
     <li>
