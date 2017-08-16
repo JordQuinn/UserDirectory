@@ -26,6 +26,21 @@ let user = data.users.filter(function(person){
      res.render("user", user)
 })
 
+app.post("/looking/add", function(req, res, next){
+let looking = data.users.filter(function(item){
+  return !item.company
+})
+     res.render("looking", {looking:looking})
+})
+
+app.post("/working/add", function(req, res, next){
+let working = data.users.filter(function(item){
+  return item.company
+})
+     res.render("working", {working: working})
+})
+
+
 app.listen(3000, function(){
   console.log("App running on port 3000")
 })
